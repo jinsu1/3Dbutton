@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  perspective: 1000px; /* 값이 작으면 원근감이 가까워지고 크면 멀어짐 주로 최상위 태그에 설정함*/
+}
+
+.flip-btn {
+  width: 200px;
+  height: 100px;
+  color: white;
+  text-align: center;
+  line-height: 100px;
+  transform-style: preserve-3d; /* 3D 공간배치 x,y 그리고 z축(원근감)이 생성 */
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.flip-btn:hover {
+  transform: rotateX(-90deg);
+}
+
+.front {
+  background-color: goldenrod;
+  height: 100px;
+  transform: translateZ(50px);
+  /* T모양으로 있는 것을 박스모양(ㄱ자)으로 만들기 위해 front를 50px만큼 사용자 기준 화면쪽으로 이동시킴 */
+}
+
+.back {
+  background-color: darkgoldenrod;
+  height: 100px;
+  transform: rotateX(90deg) translateZ(150px); /* deg = degree(각도), Z축은 X축과 Y축의 교점을 기준으로 수직을 유지하기 때문에 X,Y기울기에 따라 Z축으 기울기도 바뀐다 */
+  /* back이 x축을 기준으로 90도로 눕힌 뒤, Z축을 이용해 배치를 front 위쪽으로 이동을 시켜 옆에서 봤을 때 T 모양으로 형성되어 있음*/
+}
