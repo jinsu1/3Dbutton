@@ -1,9 +1,12 @@
 # 3Dbutton
-FlipButton
 
+https://jinsu1.github.io/3Dbutton/ \
+마우스를 올리면 회전하는 3D큐브 형식 버튼<br><br>
 ![플립박스](https://user-images.githubusercontent.com/69416518/115511868-4f204b80-a2bc-11eb-85f7-238c2495fcec.JPG)
 
 
+
+<br><br><br>
 
 perspective: 1000px; 
 /* 값이 작으면 원근감이 가까워지고 크면 멀어짐 주로 최상위 태그에 설정*/
