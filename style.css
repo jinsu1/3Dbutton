@@ -74,7 +74,7 @@ p {
   transform-style: preserve-3d;
   cursor: pointer;
   transition: 0.5s;
-  margin: 50px 3px;
+  margin: 50px 30px;
 }
 
 .cube img {
@@ -89,6 +89,14 @@ p {
 
 .cube__back {
   transform: rotateX(90deg) translateZ(64px);
+}
+
+.cube__right {
+  transform: rotateY(90deg) translateZ(64px);
+}
+
+.cube__left {
+  transform: rotateY(90deg) translateZ(-64px);
 }
 
 .cube:hover {
