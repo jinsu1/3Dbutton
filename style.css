@@ -1,3 +1,7 @@
+:root {
+  --box-size: 128px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,13 +9,22 @@
 }
 
 body {
-  background-color: black;
+  background-color: #1f1f1f;
+}
+
+p {
+  position: relative;
+  top: 220px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .container {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 20%;
   transform: translate(-50%, -50%);
   perspective: 1000px; /* 값이 작으면 원근감이 가까워지고 크면 멀어짐 주로 최상위 태그에 설정함*/
 }
@@ -43,4 +56,77 @@ body {
   height: 100px;
   transform: rotateX(90deg) translateZ(150px); /* deg = degree(각도), Z축은 X축과 Y축의 교점을 기준으로 수직을 유지하기 때문에 X,Y기울기에 따라 Z축으 기울기도 바뀐다 */
   /* back이 x축을 기준으로 90도로 눕힌 뒤, Z축을 이용해 배치를 front 위쪽으로 이동을 시켜 옆에서 봤을 때 T 모양으로 형성되어 있음*/
+}
+
+.container2 {
+  position: absolute;
+  display: flex;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  perspective: 1000px;
+}
+
+.cube {
+  width: var(--box-size);
+  height: var(--box-size);
+  display: flex;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  transition: 0.5s;
+  margin: 50px 3px;
+}
+
+.cube img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cube__front {
+  transform: translateZ(64px);
+}
+
+.cube__back {
+  transform: rotateX(90deg) translateZ(64px);
+}
+
+.cube:hover {
+  transform: rotateX(-90deg);
+}
+
+.container3 {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  perspective: 1000px;
+}
+
+.outoCube {
+  width: var(--box-size);
+  height: var(--box-size);
+  transform-style: preserve-3d;
+  transition: All 0.5s;
+}
+.outoCube img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.outoCube img:nth-child(1) {
+  transform: translateZ(64px);
+}
+
+.outoCube img:nth-child(2) {
+  transform: rotateX(90deg) translateZ(64px);
+}
+
+.outoCube img:nth-child(3) {
+  transform: rotateX(180deg) translateZ(64px);
+}
+
+.outoCube img:nth-child(4) {
+  transform: rotateX(270deg) translateZ(64px);
 }

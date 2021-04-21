@@ -14,5 +14,42 @@
             <div class="back">back</div>
         </div>
     </div>
+
+    <p>hover your mouse</p>
+
+    <div class="container2">
+        <div class="cube">
+            <img src="images/facebook_empty.png" class="cube__front" alt="페이스북 아이콘 이미지">
+            <img src="images/facebook.png" class="cube__back" alt="페이스북 아이콘 이미지">
+        </div>
+
+        <div class="cube">
+            <img src="images/instagram_empty.png" class="cube__front" alt="인스타그램 아이콘 이미지">
+            <img src="images/instagram.png" class="cube__back" alt="인스타그램 아이콘 이미지">
+        </div>
+
+        <div class="cube">
+            <img src="images/youtube.png" class="cube__front" alt="유튜브 아이콘 이미지">
+            <img src="images/twitter.png" class="cube__back" alt="트위터 아이콘 이미지">
+        </div>
+    </div>
+
+    <div class="container3">
+        <div class="outoCube">
+            <img src="images/facebook.png" alt="페이스북">
+            <img src="images/instagram.png" alt="인스타그램">
+            <img src="images/youtube.png" alt="유튜브">
+            <img src="images/twitter.png" alt="트위터">
+        </div>
+    </div>
+
+    <script>
+        let deg = 0;
+        setInterval(function() {
+            deg= deg - 90;
+            document.querySelector('.outoCube').style.transform = 
+            'rotateX(' + deg + 'deg)';
+        }, 1000)
+    </script>
 </body>
 </html>
